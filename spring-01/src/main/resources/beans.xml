@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--bean就是java对象 , 由Spring创建和管理-->
+    <!--构造函数存在参数的情况，需要先给构造函数参数赋值，通过index下标的方式赋值-->
+<!--    <bean id="hello" class="com.song.pro.Hello">-->
+<!--        <constructor-arg index="0" value="spring"/>-->
+<!--        <property name="name" value="Spring1"/>-->
+<!--    </bean>-->
+    <!--通过参数类型赋值-->
+<!--    <bean id="hello" class="com.song.pro.Hello">-->
+<!--        <constructor-arg type="java.lang.String" value="构造函数赋值"/>-->
+<!--    </bean>-->
+
+    <!--通过参数名称赋值-->
+    <bean id="hello" class="com.song.pro.Hello">
+        <constructor-arg name="name" value="构造函数参数赋值"/>
+    </bean>
+
+
+    <bean id="address" class="com.song.pro.Address">
+        <property name="address" value="武汉"/>
+    </bean>
+
+    <bean id="student" class="com.song.pro.Student">
+        <property name="name" value="123"/>
+        <property name="address" ref="address"/>
+    </bean>
+
+</beans>
